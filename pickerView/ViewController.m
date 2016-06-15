@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "CustomPickerView.h"
 
 @interface ViewController ()
+@property (nonatomic,strong) CustomPickerView *pickerView;
 
 @end
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self customUI];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -24,4 +28,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)customUI
+{
+    self.pickerView = [[CustomPickerView alloc] initWithFrame:CGRectMake(0, 100, 300, 300)];
+    [self.view addSubview:self.pickerView];
+}
 @end
